@@ -10,6 +10,12 @@ $(document).ready(function() {
                 }).done(function(response) { // the .done function happens after the API response is returned
                     console.log(response);
 
+                    var image = $('<img>');
+                    console.log(image);
+
+                    image[0].src = response.data[0].images.fixed_width_downsampled.url;
+                    $("#gif").append(image);
+
 
                 });
             });
